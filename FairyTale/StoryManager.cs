@@ -21,7 +21,7 @@ namespace FairyTale
         {
             Console.SetCursorPosition((Console.WindowWidth - Name.Length) / 2, Console.CursorTop);
             Console.WriteLine(Name);
-            Console.WriteLine("Шёл дед лесом. Шёл дед, шёл, да и обронил рукавичку.");
+           
 
         }
         // Old Man lost Glove

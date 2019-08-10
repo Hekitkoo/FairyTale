@@ -33,7 +33,7 @@ namespace FairyTale
 
         public override void Action(IMainStoryObject mainStoryObject)
         {
-            Console.WriteLine("Рукавичка падает.");
+            Console.WriteLine($"Шёл {mainStoryObject.ToString().Split('.').Last()} лесом, шёл да и оборонил объект типа {this.Name}");
         }
 
         public void DoPlotTwist()
