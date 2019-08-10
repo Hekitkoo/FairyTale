@@ -33,16 +33,12 @@ namespace FairyTale
 
         public override void Action(IMainStoryObject mainStoryObject)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Рукавичка падает.");
         }
 
         public void DoPlotTwist()
         {
-            int _size = default(int);
-            foreach (var item in Objects)
-            {
-                _size += item.Size;
-            }
+            var _size = Objects.Sum(o => o.Size);
             // throw when gloves size < all size character who in gloves.
             if (Size < _size)
                 throw new Characters.MainCharacterOverflowException($"{this.Name} взорвалась, никто не выжил.");

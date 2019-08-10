@@ -22,8 +22,9 @@ namespace FairyTale
         public override int Size { get; set; }
         public override void Action(IMainStoryObject mainStoryObject)
         {
+            Console.WriteLine($"Красивая {(mainStoryObject as AbstractStoryObject).Name}.");
             if (_goodOrBadBoy)
-                Console.WriteLine($"Мне плевать, я медведь, паркуюсь(захожу) где хочу");
+                Console.WriteLine($"Мне плевать, я медведь, паркуюсь(захожу) где хочу.");
             else
                 Console.WriteLine("Я хороший медведь, я не влезу, удачи Вам.");
         }

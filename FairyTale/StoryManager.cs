@@ -27,9 +27,8 @@ namespace FairyTale
         // Old Man lost Glove
         public void DoAct1(IMainStoryObject oldMan)
         {
+            if (oldMan.Objects.First() is Glove)
             _mainVictim = oldMan.Objects.First() as Glove;
-            // Debug
-            //Console.WriteLine(mainVictim.Name);
             oldMan.DoPlotTwist();
         }
         // main plot(repitable)
@@ -39,34 +38,34 @@ namespace FairyTale
             character.Action(_mainVictim);
             if (_mainVictim.Objects.Count != 0)
             {
-                string _nameList = default(string);
-                foreach (var item in _mainVictim.Objects)
-                {
-                    _nameList += item.Name + ", ";
-                }
 
-                Console.WriteLine($"{_nameList}заходи {character.Name}.");
+                // Get all characters who live in gloves
+                var _nameList = string.Join(", ", _mainVictim.Objects.Select(obj => obj.Name));
+
+                Console.WriteLine($"{_nameList}. Заходи {character.Name}.");
             }            
             _mainVictim.Objects.Add(character);
             Console.WriteLine($"Вот их уже {_mainVictim.Objects.Count}.");
         }
         // Bear come to gloves
-        public void DoAct2(AbstractStoryObject bear)
+        public void DoAct2(AbstractStoryObject character)
         {
             // random choise
             bool _bearChois = Convert.ToBoolean(random.Next(0, 2));
-            Console.WriteLine($"Вот {bear.HowMove} {bear.Name}. Увидела оъект типа {_mainVictim.Name} и такая(ой):");
+            Console.WriteLine($"Вот {character.HowMove} {character.Name}. Увидела оъект типа {_mainVictim.Name} и такая(ой):");
+
             // sync choise
-            (bear as Bear).Choise = _bearChois;
+            if (character is Bear)
+            (character as Bear).Choise = _bearChois;
 
             if (_bearChois)
             {
-                bear.Action(_mainVictim);
-                _mainVictim.Objects.Add(bear);
+                character.Action(_mainVictim);
+                _mainVictim.Objects.Add(character);
             }
             else
             {
-                bear.Action(_mainVictim);
+                character.Action(_mainVictim);
             }
 
             _mainVictim.DoPlotTwist();

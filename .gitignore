@@ -3,3 +3,8 @@
 ################################################################################
 
 /FairyTale/obj/Debug
+/FairyTale/bin/Debug
+.vs
+.vs/FairyTale
+.vs/FairyTale\v15
+

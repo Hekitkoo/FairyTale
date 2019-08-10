@@ -25,6 +25,7 @@ namespace FairyTale
         // Lost glove
         public void DoPlotTwist()
         {
+            Objects.First().Action(this);
             Objects.Clear();
         }
     }

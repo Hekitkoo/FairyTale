@@ -13,14 +13,16 @@ namespace FairyTale
     {
         static void Main(string[] args)
         {
+            // change encoding console(for people who have english version Windows)
+            Console.OutputEncoding = Encoding.UTF8;
             // Story Characters
-            StoryManager _storyManager = new StoryManager();
-            IMainStoryObject _oldMan = new OldMan();
-            AbstractStoryObject _mouse = new Mouse();
-            AbstractStoryObject _frog = new Frog();
-            AbstractStoryObject _bunny = new Bunny();
-            AbstractStoryObject _wolf = new Wolf();
-            AbstractStoryObject _bear = new Bear();
+            var _storyManager = new StoryManager();
+            var _oldMan = new OldMan();
+            var _mouse = new Mouse();
+            var _frog = new Frog();
+            var _bunny = new Bunny();
+            var _wolf = new Wolf();
+            var _bear = new Bear();
             // Story
             try
             {
