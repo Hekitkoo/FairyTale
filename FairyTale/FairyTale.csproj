@@ -43,11 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Characters\Abstracts\AbstractStoryObject.cs" />
+    <Compile Include="Characters\Bear.cs" />
+    <Compile Include="Characters\Bunny.cs" />
+    <Compile Include="Characters\Frog.cs" />
+    <Compile Include="Characters\Glove.cs" />
+    <Compile Include="Characters\Interfaces\IMainStoryObject.cs" />
+    <Compile Include="Characters\Mouse.cs" />
+    <Compile Include="Characters\OldMan.cs" />
+    <Compile Include="Characters\Wolf.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
