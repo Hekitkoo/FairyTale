@@ -7,21 +7,40 @@ namespace FairyTale
     /// </summary>
     class Bear : StoryObject
     {
+        // Объявляем делегат
+        public delegate void CustomEvent(string message);
+        // Событие, возникающее Выборе медведя
+        public event CustomEvent BearAttacked;
+        // Событие, возникающее при выводе денег
+        public event CustomEvent BearNoAttacked;
+
         // bear choise
-        bool _badBoy;
+        bool _badBoy = false;
         public override string Name => "Медведь верующий";
         public override int Size => 120;
         public override void Action(IMainStoryObject mainStoryObject)
         {
+            BearAttacked += ShowMessage;
+            BearNoAttacked += ShowMessage;
             if (mainStoryObject is StoryObject)
             {
+
                 Console.WriteLine($"Красивая {(mainStoryObject as StoryObject).Name}.");
                 if (_badBoy)
-                    Console.WriteLine($"Мне плевать, я медведь, паркуюсь(захожу) где хочу.");
+                {
+                    BearAttacked($"Мне плевать, я медведь, паркуюсь(захожу) где хочу.");
+                }
                 else
-                    Console.WriteLine("Я хороший медведь, я не влезу, удачи Вам.");
+                {
+                    BearNoAttacked("Я хороший медведь, я не влезу, удачи Вам.");
+                }
             }
         }
         public bool Choise { set { _badBoy = value; } }
+
+        private static void ShowMessage(string message)
+        {
+            Console.WriteLine(message);
+        }
     }
 }

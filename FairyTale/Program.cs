@@ -8,8 +8,12 @@ namespace FairyTale
     /// </summary>
     class Program
     {
+        // delegate 
+        delegate void Action(StoryObject storyMan);
         static void Main(string[] args)
         {
+            Action action;
+           
             // change encoding console(for people who have english version Windows)
             Console.OutputEncoding = Encoding.UTF8;
             // Story Characters
@@ -21,15 +25,19 @@ namespace FairyTale
             var wolf = new Wolf();
             var bear = new Bear();
             // Story
+            action = storyManager.DoRepitableAct;
             try
             {
                 storyManager.DoAct0();
                 storyManager.DoAct1(oldMan);
-                storyManager.DoRepitableAct(mouse);
-                storyManager.DoRepitableAct(mouse);
-                storyManager.DoRepitableAct(frog);
-                storyManager.DoRepitableAct(bunny);
-                storyManager.DoRepitableAct(wolf);
+                action(mouse);
+                action(frog);
+                action(bunny);
+                action(wolf);
+                //storyManager.DoRepitableAct(mouse);
+                //storyManager.DoRepitableAct(frog);
+                //storyManager.DoRepitableAct(bunny);
+                //storyManager.DoRepitableAct(wolf);
                 storyManager.DoAct2(bear);
             }
             catch (Exception ex)

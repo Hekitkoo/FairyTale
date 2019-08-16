@@ -8,11 +8,11 @@ namespace FairyTale
     /// </summary>
     class StoryManager
     {
+        //
         static Random random = new Random();
+        static string Name = "Рукавичка(ООП версия)";
         // prop
         Glove _mainVictim;
-        static string Name = "Рукавичка(ООП версия)";
-
         // Name of the Story
         public void DoAct0()
         {
