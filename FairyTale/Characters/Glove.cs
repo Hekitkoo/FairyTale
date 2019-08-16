@@ -45,9 +45,9 @@ namespace FairyTale
             }
             // throw when gloves size < all size character who in gloves.
             if (Size < _size)
-                throw new Characters.MainCharacterOverflowException($"{this.Name} взорвалась, никто не выжил.");
+                throw new Exception($"{this.Name} взорвалась, никто не выжил.");
             else
-                throw new Exceptions.GoodEndException("Неожиданный хороший конец.");
+                throw new Exception("Неожиданный хороший конец.");
         }
 
 
