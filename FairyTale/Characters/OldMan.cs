@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace FairyTale
 {
@@ -17,10 +18,11 @@ namespace FairyTale
         }
         // prop
         public ICollection<StoryObject> Objects { get; set; }
-        
+
         // Lost glove
         public void DoPlotTwist()
         {
+            Objects.First().Action(this);
             Objects.Clear();
         }
     }

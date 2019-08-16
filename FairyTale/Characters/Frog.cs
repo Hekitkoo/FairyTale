@@ -7,12 +7,10 @@
     {
         public Frog()
         {
-            Name = "Лягушка попрыгушка";
-            Size = 20;
             HowMove = "прыг-прыг";
         }
-        public override string Name { get; set; }
-        public override int Size { get; set; }
+        public override string Name => "Лягушка попрыгушка";
+        public override int Size => 20;
         public override string HowMove { get; set; }
     }
 }

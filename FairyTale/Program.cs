@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace FairyTale
 {
@@ -9,32 +10,34 @@ namespace FairyTale
     {
         static void Main(string[] args)
         {
+            // change encoding console(for people who have english version Windows)
+            Console.OutputEncoding = Encoding.UTF8;
             // Story Characters
-            StoryManager _storyManager = new StoryManager();
-            IMainStoryObject _oldMan = new OldMan();
-            StoryObject _mouse = new Mouse();
-            StoryObject _frog = new Frog();
-            StoryObject _bunny = new Bunny();
-            StoryObject _wolf = new Wolf();
-            StoryObject _bear = new Bear();
+            var storyManager = new StoryManager();
+            var oldMan = new OldMan();
+            var mouse = new Mouse();
+            var frog = new Frog();
+            var bunny = new Bunny();
+            var wolf = new Wolf();
+            var bear = new Bear();
             // Story
             try
             {
-            _storyManager.DoAct0();
-            _storyManager.DoAct1(_oldMan);
-            _storyManager.DoRepitableAct(_mouse);
-            _storyManager.DoRepitableAct(_frog);
-            _storyManager.DoRepitableAct(_bunny);
-            _storyManager.DoRepitableAct(_wolf);
-            _storyManager.DoAct2(_bear);
+                storyManager.DoAct0();
+                storyManager.DoAct1(oldMan);
+                storyManager.DoRepitableAct(mouse);
+                storyManager.DoRepitableAct(mouse);
+                storyManager.DoRepitableAct(frog);
+                storyManager.DoRepitableAct(bunny);
+                storyManager.DoRepitableAct(wolf);
+                storyManager.DoAct2(bear);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.GetType());
                 Console.WriteLine(ex.Message);
             }
-
-
+            Console.ReadKey();
         }
     }
 }

@@ -5,12 +5,7 @@
     /// </summary>
     class Wolf : StoryObject
     {
-        public Wolf()
-        {
-            Name = "Волчок серый бочок";
-            Size = 60;
-        }
-        public override string Name { get; set; }
-        public override int Size { get; set; }
+        public override string Name => "Волчок серый бочок";
+        public override int Size => 60;
     }
 }

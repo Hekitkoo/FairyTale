@@ -7,13 +7,10 @@
     {
         public Bunny()
         {
-            Name = "Зайчик побегайчик";
-            Size = 30;
             HowMove = "прыг-прыг";
-
         }
-        public override string Name { get; set; }
-        public override int Size { get; set; }
+        public override string Name => "Зайчик побегайчик";
+        public override int Size => 30;
         public override string HowMove { get; set; }
     }
 }

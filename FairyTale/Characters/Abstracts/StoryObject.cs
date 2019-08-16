@@ -7,8 +7,8 @@ namespace FairyTale
     /// </summary>
     abstract class StoryObject
     {
-        public abstract string Name { get; set; }
-        public abstract int Size { get; set; }
+        public abstract string Name { get;}
+        public abstract int Size { get;}
         public virtual string HowMove { get; set; } = "бежит";
         public virtual void Action(IMainStoryObject mainStoryObject)
         {
