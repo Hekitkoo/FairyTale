@@ -9,7 +9,7 @@ namespace FairyTale
     /// <summary>
     /// Abstract class for all characters
     /// </summary>
-    abstract class AbstractStoryObject
+    abstract class StoryObject
     {
 
         public abstract string Name { get; set; }
@@ -23,7 +23,7 @@ namespace FairyTale
             if (mainStoryObject.Objects.Count == 0)
                 Console.WriteLine("Тут я буду жить.");
             else
-                Console.WriteLine($"Кто, кто в объекте типа {(mainStoryObject as AbstractStoryObject).Name} живет?");
+                Console.WriteLine($"Кто, кто в объекте типа {(mainStoryObject as StoryObject).Name} живет?");
         }
 
     }

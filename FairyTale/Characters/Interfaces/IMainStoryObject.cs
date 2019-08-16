@@ -11,7 +11,7 @@ namespace FairyTale
     /// </summary>
     interface IMainStoryObject
     {
-        ICollection<AbstractStoryObject> Objects { get; set; }
+        ICollection<StoryObject> Objects { get; set; }
         void DoPlotTwist();
     }
 }

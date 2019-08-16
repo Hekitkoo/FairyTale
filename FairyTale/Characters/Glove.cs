@@ -9,14 +9,14 @@ namespace FairyTale
     /// <summary>
     /// One of the main story characters
     /// </summary>
-    class Glove : AbstractStoryObject, IMainStoryObject
+    class Glove : StoryObject, IMainStoryObject
     {
         // default ctor
         public Glove()
         {
             Name = "Рукавичка";
             Size = 200;
-            Objects = new List<AbstractStoryObject>();
+            Objects = new List<StoryObject>();
         }
         // Custom ctor
         public Glove(string name, int size)
@@ -25,7 +25,7 @@ namespace FairyTale
             Size = size;
         }
         // prop
-        public ICollection<AbstractStoryObject> Objects { get; set; }
+        public ICollection<StoryObject> Objects { get; set; }
 
         public override string Name { get; set; }
         public override int Size { get; set; }
@@ -45,9 +45,9 @@ namespace FairyTale
             }
             // throw when gloves size < all size character who in gloves.
             if (Size < _size)
-                throw new Exception($"{this.Name} взорвалась, никто не выжил.");
+                throw new Exceptions.MainCharacterOverflowException ($"{this.Name} взорвалась, никто не выжил.");
             else
-                throw new Exception("Неожиданный хороший конец.");
+                throw new Exceptions.GoodEndException("Неожиданный хороший конец.");
         }
 
 

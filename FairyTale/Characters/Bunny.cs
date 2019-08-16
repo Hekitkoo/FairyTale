@@ -9,7 +9,7 @@ namespace FairyTale
     /// <summary>
     ///  it's a bunny(not main character)
     /// </summary>
-    class Bunny : AbstractStoryObject
+    class Bunny : StoryObject
     {
         public Bunny()
         {

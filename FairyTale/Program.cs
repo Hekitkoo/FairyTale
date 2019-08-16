@@ -16,11 +16,11 @@ namespace FairyTale
             // Story Characters
             StoryManager _storyManager = new StoryManager();
             IMainStoryObject _oldMan = new OldMan();
-            AbstractStoryObject _mouse = new Mouse();
-            AbstractStoryObject _frog = new Frog();
-            AbstractStoryObject _bunny = new Bunny();
-            AbstractStoryObject _wolf = new Wolf();
-            AbstractStoryObject _bear = new Bear();
+            StoryObject _mouse = new Mouse();
+            StoryObject _frog = new Frog();
+            StoryObject _bunny = new Bunny();
+            StoryObject _wolf = new Wolf();
+            StoryObject _bear = new Bear();
             // Story
             try
             {

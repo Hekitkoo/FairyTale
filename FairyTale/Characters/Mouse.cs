@@ -9,7 +9,7 @@ namespace FairyTale
     /// <summary>
     /// Character (not main)
     /// </summary>
-    class Mouse : AbstractStoryObject
+    class Mouse : StoryObject
     {
         public Mouse()
         {

@@ -33,7 +33,7 @@ namespace FairyTale
             oldMan.DoPlotTwist();
         }
         // main plot(repitable)
-        public void DoRepitableAct(AbstractStoryObject character)
+        public void DoRepitableAct(StoryObject character)
         {
             Console.WriteLine($"Вот {character.HowMove} {character.Name}. Увидела оъект типа {_mainVictim.Name} и такая(ой):");
             character.Action(_mainVictim);
@@ -51,7 +51,7 @@ namespace FairyTale
             Console.WriteLine($"Вот их уже {_mainVictim.Objects.Count}.");
         }
         // Bear come to gloves
-        public void DoAct2(AbstractStoryObject bear)
+        public void DoAct2(StoryObject bear)
         {
             // random choise
             bool _bearChois = Convert.ToBoolean(random.Next(0, 2));

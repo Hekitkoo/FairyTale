@@ -14,13 +14,13 @@ namespace FairyTale
         // ctor
         public OldMan()
         {
-            Objects = new List<AbstractStoryObject>
+            Objects = new List<StoryObject>
             {
                 new Glove()
             };
         }
         // prop
-        public ICollection<AbstractStoryObject> Objects { get; set; }
+        public ICollection<StoryObject> Objects { get; set; }
         
         // Lost glove
         public void DoPlotTwist()
