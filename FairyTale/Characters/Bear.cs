@@ -48,7 +48,7 @@ namespace FairyTale
 
         public void DoPlotTwist()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Test");
         }
     }
 }
