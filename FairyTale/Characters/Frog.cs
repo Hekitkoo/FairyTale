@@ -7,13 +7,9 @@ namespace FairyTale
     /// </summary>
     class Frog : StoryObject, IMainStoryObject
     {
-        public Frog()
-        {
-            HowMove = "прыг-прыг";
-        }
         public override string Name => "Лягушка попрыгушка";
         public override int Size => 20;
-        public override string HowMove { get; set; }
+        public override MoveStyle HowMove => MoveStyle.Jump;
         public ICollection<StoryObject> Objects { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
         public void DoPlotTwist()

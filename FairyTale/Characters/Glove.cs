@@ -18,7 +18,7 @@ namespace FairyTale
         public ICollection<StoryObject> Objects { get; set; }
         public override string Name => "Рукавичка";
         public override int Size => 200;
-        public override string HowMove { get; set; }
+        public override MoveStyle HowMove => MoveStyle.NotMove;
 
         public override void Action(IMainStoryObject mainStoryObject)
         {
