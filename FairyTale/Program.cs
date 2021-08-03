@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace FairyTale
@@ -13,32 +14,28 @@ namespace FairyTale
         static void Main(string[] args)
         {
             Action action;
-           
             // change encoding console(for people who have english version Windows)
             Console.OutputEncoding = Encoding.UTF8;
             // Story Characters
             var storyManager = new StoryManager();
             var oldMan = new OldMan();
-            var mouse = new Mouse();
-            var frog = new Frog();
-            var bunny = new Bunny();
-            var wolf = new Wolf();
             var bear = new Bear();
+
+            ICollection<StoryObject> animals = new List<StoryObject>()
+            {
+                new Mouse(), new Frog(), new Bunny(), new Wolf()
+            };
             // Story
             action = storyManager.DoRepitableAct;
             try
             {
-                storyManager.DoAct0();
-                storyManager.DoAct1(oldMan);
-                action(mouse);
-                action(frog);
-                action(bunny);
-                action(wolf);
-                //storyManager.DoRepitableAct(mouse);
-                //storyManager.DoRepitableAct(frog);
-                //storyManager.DoRepitableAct(bunny);
-                //storyManager.DoRepitableAct(wolf);
-                storyManager.DoAct2(bear);
+                storyManager.DoActionZero();
+                storyManager.DoActionOne(oldMan);
+                foreach (StoryObject animal in animals)
+                {
+                    action(animal);
+                }
+                storyManager.FinalAction(bear);
             }
             catch (Exception ex)
             {

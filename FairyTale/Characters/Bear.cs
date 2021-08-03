@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FairyTale
 {
     /// <summary>
     ///  Half main character;
     /// </summary>
-    class Bear : StoryObject
+    class Bear : StoryObject, IMainStoryObject
     {
         // Объявляем делегат
         public delegate void CustomEvent(string message);
@@ -38,9 +39,16 @@ namespace FairyTale
         }
         public bool Choise { set { _badBoy = value; } }
 
+        public ICollection<StoryObject> Objects { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         private static void ShowMessage(string message)
         {
             Console.WriteLine(message);
+        }
+
+        public void DoPlotTwist()
+        {
+            Console.WriteLine("Test");
         }
     }
 }

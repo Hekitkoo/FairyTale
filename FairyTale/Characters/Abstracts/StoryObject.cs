@@ -9,7 +9,7 @@ namespace FairyTale
     {
         public abstract string Name { get;}
         public abstract int Size { get;}
-        public virtual string HowMove { get; set; } = "бежит";
+        public virtual MoveStyle HowMove { get; } = MoveStyle.Run;
         public virtual void Action(IMainStoryObject mainStoryObject)
         {
             if (mainStoryObject.Objects.Count != 0)

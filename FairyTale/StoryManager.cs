@@ -14,13 +14,13 @@ namespace FairyTale
         // prop
         Glove _mainVictim;
         // Name of the Story
-        public void DoAct0()
+        public void DoActionZero()
         {
             Console.SetCursorPosition((Console.WindowWidth - Name.Length) / 2, Console.CursorTop);
             Console.WriteLine(Name);
         }
         // Old Man lost Glove
-        public void DoAct1(IMainStoryObject oldMan)
+        public void DoActionOne(IMainStoryObject oldMan)
         {
             if (oldMan.Objects.First() is Glove)
             {
@@ -44,26 +44,22 @@ namespace FairyTale
         }
 
         // Bear come to gloves
-        public void DoAct2(StoryObject character)
+        public void FinalAction(Bear bear)
         {
             // random choise
             bool _bearChois = Convert.ToBoolean(random.Next(0, 2));
-            Console.WriteLine($"Вот {character.HowMove} {character.Name}. Увидела оъект типа {_mainVictim.Name} и такая(ой):");
-            // sync choise
-            if (character is Bear)
-            {
-                (character as Bear).Choise = _bearChois;
+            Console.WriteLine($"Вот {bear.HowMove} {bear.Name}. Увидела оъект типа {_mainVictim.Name} и такая(ой):");
+                bear.Choise = _bearChois;
                 if (_bearChois)
                 {
-                    character.Action(_mainVictim);
-                    _mainVictim.Objects.Add(character);
+                    bear.Action(_mainVictim);
+                    _mainVictim.Objects.Add(bear);
                 }
                 else
                 {
-                    character.Action(_mainVictim);
+                    bear.Action(_mainVictim);
                 }
                 _mainVictim.DoPlotTwist();
-            }
         }
     }
 }
