@@ -1,24 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FairyTale
+﻿namespace FairyTale
 {
     /// <summary>
     /// Character (not main)
     /// </summary>
-    class Mouse : AbstractStoryObject
+    class Mouse : StoryObject
     {
-        public Mouse()
-        {
-            Name = "Мышка поскребушка";
-            Size = 10;
-        }
-        public override string Name { get; set; }
-        public override int Size { get; set; }
-
-
+        public override string Name => "Мышка поскребушка";
+        public override int Size => 10;
     }
 }

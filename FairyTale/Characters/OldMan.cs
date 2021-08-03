@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FairyTale
 {
@@ -14,17 +11,18 @@ namespace FairyTale
         // ctor
         public OldMan()
         {
-            Objects = new List<AbstractStoryObject>
+            Objects = new List<StoryObject>
             {
                 new Glove()
             };
         }
         // prop
-        public ICollection<AbstractStoryObject> Objects { get; set; }
-        
+        public ICollection<StoryObject> Objects { get; set; }
+
         // Lost glove
         public void DoPlotTwist()
         {
+            Objects.First().Action(this);
             Objects.Clear();
         }
     }

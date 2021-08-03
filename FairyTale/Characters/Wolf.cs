@@ -1,22 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FairyTale
+﻿namespace FairyTale
 {
     /// <summary>
     ///  Just a wolf(not main character)
     /// </summary>
-    class Wolf : AbstractStoryObject
+    class Wolf : StoryObject
     {
-        public Wolf()
-        {
-            Name = "Волчок серый бочок";
-            Size = 60;
-        }
-        public override string Name { get; set; }
-        public override int Size { get; set; }
+        public override string Name => "Волчок серый бочок";
+        public override int Size => 60;
     }
 }

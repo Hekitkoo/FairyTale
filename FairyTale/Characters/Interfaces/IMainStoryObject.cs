@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace FairyTale
 {
@@ -11,7 +7,7 @@ namespace FairyTale
     /// </summary>
     interface IMainStoryObject
     {
-        ICollection<AbstractStoryObject> Objects { get; set; }
+        ICollection<StoryObject> Objects { get; set; }
         void DoPlotTwist();
     }
 }
